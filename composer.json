@@ -14,12 +14,12 @@
         "yiisoft/yii2": "*",
         "bower-asset/treegrid": ">= 0.1.6"
     },
-	"repositories":[
-	        {
+    "repositories":[
+	{
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-	],
+    ],
     "autoload": {
         "psr-4": {
             "dkhlystov\\": ""
