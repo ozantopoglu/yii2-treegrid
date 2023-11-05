@@ -1,6 +1,6 @@
 <?php
 
-namespace dkhlystov\widgets;
+namespace ozantopoglu\widgets;
 
 use yii\web\AssetBundle;
 
