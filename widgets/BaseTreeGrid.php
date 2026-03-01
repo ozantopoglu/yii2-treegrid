@@ -18,14 +18,14 @@ use yii\web\JsExpression;
 
 /**
  * Base class for widgets displaying data as tree with columns
- * 
+ *
  * Based on yii\grid\GridView, but not extends it because no needs in features like sorting, paging
  * and filtering data.
- * 
+ *
  * @author Dmitry Khlystov <dkhlystov@gmail.com>
  */
-abstract class BaseTreeGrid extends Widget {
-
+abstract class BaseTreeGrid extends Widget
+{
     /**
      * @var array the HTML attributes for the container tag of the tree grid.
      * The "tag" element specifies the tag name of the container element and defaults to "div".
@@ -197,7 +197,8 @@ abstract class BaseTreeGrid extends Widget {
      * Ajax renderer. If ajax request, it needs only tbody data.
      * @return void
      */
-    protected function renderAjax() {
+    protected function renderAjax()
+    {
         $response = Yii::$app->getResponse();
         $response->clearOutputBuffers();
         $response->format = \yii\web\Response::FORMAT_JSON;
@@ -229,7 +230,7 @@ abstract class BaseTreeGrid extends Widget {
                 $options['onMove'] = new JsExpression('function(item, target, position) {
                     var $el = this;
                     $el.treegrid("option", "enableMove", false);
-                    $.get("'.$url.'", {
+                    $.get("' . $url . '", {
                         id: item.treegrid("getId"),
                         target: target.treegrid("getId"),
                         position: position
@@ -382,10 +383,10 @@ abstract class BaseTreeGrid extends Widget {
 
         //treegrid
         $id = $model[$this->idAttribute];
-        Html::addCssClass($options, 'treegrid-'.$id);
+        Html::addCssClass($options, 'treegrid-' . $id);
         $parentId = $this->getParentId($model, $key, $index);
         if ($parentId !== null) {
-            Html::addCssClass($options, 'treegrid-parent-'.$parentId);
+            Html::addCssClass($options, 'treegrid-parent-' . $parentId);
         }
         $childCount = $this->getChildCount($model, $key, $index);
         if (array_search($id, $this->_expanded) !== false) {
@@ -537,5 +538,4 @@ abstract class BaseTreeGrid extends Widget {
      * @return void
      */
     abstract protected function removeRoots();
-
 }
