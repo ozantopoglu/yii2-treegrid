@@ -16,7 +16,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "bower-asset/treegrid": ">= 0.1.6"
+        "bower-asset/jquery-treegrid": ">= 0.1.6"
     },
     "repositories":[
 	{
