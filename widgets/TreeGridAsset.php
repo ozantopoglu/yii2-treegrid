@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class TreeGridAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/treegrid/dist';
+    public $sourcePath = '@bower/jquery-treegrid/';
 
     public $css = [
         'css/jquery.treegrid.css',
@@ -22,6 +22,7 @@ class TreeGridAsset extends AssetBundle
 
         $this->js = [
             'js/jquery.treegrid' . (YII_DEBUG ? '' : '.min') . '.js',
+            'js/jquery.cookie.js',
         ];
     }
 
